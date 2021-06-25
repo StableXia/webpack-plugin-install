@@ -1,12 +1,12 @@
 import webpack from "webpack";
 import install, { ICmdOptions } from "./install";
 
-export type IPluginOptions = ICmdOptions;
+export type IInstallPluginOptions = ICmdOptions;
 
 export default class InsatllPlugin {
-  options: IPluginOptions;
+  options: IInstallPluginOptions;
 
-  constructor(options: IPluginOptions) {
+  constructor(options: IInstallPluginOptions) {
     this.options = options;
   }
 

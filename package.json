@@ -1,0 +1,31 @@
+{
+  "name": "webpack-plugin-install",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "dev": "yarn build -w",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaotangdou/webpack-plugin-install.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaotangdou/webpack-plugin-install/issues"
+  },
+  "homepage": "https://github.com/xiaotangdou/webpack-plugin-install#readme",
+  "devDependencies": {
+    "@types/through2": "^2.0.36",
+    "@types/which": "^2.0.0",
+    "typescript": "^4.3.4",
+    "webpack": "^5.40.0"
+  },
+  "dependencies": {
+    "which": "^2.0.2"
+  }
+}

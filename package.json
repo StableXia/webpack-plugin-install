@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "yarn build -w",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",

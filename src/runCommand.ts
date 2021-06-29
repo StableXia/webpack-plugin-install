@@ -3,7 +3,7 @@ import which from "which";
 
 interface ICommand {
   cmd: string;
-  args: string[];
+  args?: string[];
   cwd?: string;
 }
 
@@ -22,11 +22,16 @@ export default function runCommand(command: ICommand) {
         );
       }
 
-      const cmd = spawn(quoteIfNecessary(cmdPath as string), command.args, {
-        shell: true,
-        stdio: "inherit",
-        cwd: command.cwd || process.cwd(),
-      });
+      const cmd = spawn(
+        quoteIfNecessary(cmdPath as string),
+        command.args || [],
+        {
+          shell: true,
+          stdio: "inherit",
+          cwd: command.cwd || process.cwd(),
+        }
+      );
+
       cmd.on("close", (code) => {
         if (code !== 0) {
           return reject(

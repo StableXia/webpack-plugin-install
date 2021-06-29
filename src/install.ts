@@ -4,7 +4,7 @@ type ICmdName = "npm" | "yarn";
 
 export interface ICmdOptions {
   cmd: ICmdName;
-  args: string[];
+  args?: string[];
   cwd?: string;
 }
 

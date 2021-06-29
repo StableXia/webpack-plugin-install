@@ -1,18 +1,22 @@
 const webapck = require("webpack");
 const InsatllPlugin = require("../lib/index").default;
+const install = require("../lib/install").default;
+
+jest.mock("../lib/install.js");
 
 function testInsatllPlugin(webpackConfig, done) {
   webapck(webpackConfig, (err, stats) => {
     expect(err).toBeFalsy();
+    expect(install).toHaveBeenCalled();
     done();
   });
 }
 
 describe("InsatllPlugin", () => {
-  it("使用 yarn 安装依赖", (done) => {
+  it("install 被调用", (done) => {
     testInsatllPlugin(
       {
-        plugins: [new InsatllPlugin({ cmd: "yarn", args: ["add", "webpack"] })],
+        plugins: [new InsatllPlugin({ cmd: "yarn" })],
       },
       done
     );
